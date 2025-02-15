@@ -5,9 +5,13 @@ export default function Footer() {
     <footer className="footer footer-center p-4 bg-base-300 text-base-content mt-auto">
       <aside>
         <p>
-          © {currentYear} Farming@Bonobo0, Hankyong National University Game
-          Development Club. All rights reserved.
+          © {currentYear}{" "}
+          <a className="link link-hover" href="https://github.com/Bonobo0/">
+            Bonobo0
+          </a>
+          . All rights reserved.
         </p>
+        <p>Farming, Hankyong National University Game Development Club.</p>
         <div className="flex items-center gap-2 text-sm">
           <a
             href="https://github.com/Bonobo0/2024-2-farming-minigame-support"
