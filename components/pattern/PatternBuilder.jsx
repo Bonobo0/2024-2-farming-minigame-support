@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Modal from "./Modal";
+import Modal from "@/components/Modal";
 
 export default function PatternBuilder({ monster_data }) {
   const [patterns, setPatterns] = useState([]);
@@ -17,6 +17,7 @@ export default function PatternBuilder({ monster_data }) {
     monsterName: "",
   });
   const fileInputRef = useRef(null);
+  const [showCode, setShowCode] = useState(false);
 
   // 패턴을 시작 시간 기준으로 정렬하는 함수
   const sortPatternsByStartTime = (patterns) => {
@@ -357,13 +358,21 @@ export default function PatternBuilder({ monster_data }) {
                 </tbody>
               </table>
             </div>
-
-            {/* JSON 데이터 (숨김 처리) */}
-            <textarea
-              className="hidden"
-              value={JSON.stringify(patterns, null, 2)}
-              readOnly
-            />
+            <div className="divider">코드 미리 보기</div>
+            <button
+              type="button"
+              onClick={() => setShowCode(!showCode)}
+              className="btn btn-outline mt-4"
+            >
+              {showCode ? "코드 미리 보기 숨기기" : "코드 미리 보기"}
+            </button>
+            {showCode && (
+              <div className="mockup-code mt-4">
+                <pre>
+                  <code>{JSON.stringify(patterns, null, 2)}</code>
+                </pre>
+              </div>
+            )}
           </div>
         </div>
 
