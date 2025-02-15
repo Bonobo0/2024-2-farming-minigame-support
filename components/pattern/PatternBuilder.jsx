@@ -154,13 +154,13 @@ export default function PatternBuilder({ monster_data }) {
   };
 
   return (
-    <div className="min-h-screen w-full flex justify-center p-4">
-      <div className="w-full max-w-[75%]">
+    <div className="min-h-screen w-full flex justify-center">
+      <div className="w-full lg:max-w-[85%] xl:max-w-[75%]">
         <div className="card bg-base-100 shadow-xl">
-          <div className="card-body">
-            <h2 className="card-title mb-4">스폰 패턴 생성기</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="card-body p-8">
+            <h2 className="card-title mb-2 sm:mb-4">스폰 패턴 생성기</h2>
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text">패턴 타입</span>
@@ -269,10 +269,10 @@ export default function PatternBuilder({ monster_data }) {
                   </select>
                 </div>
               </div>
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex flex-wrap gap-2">
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary btn-sm sm:btn-md"
                   disabled={!currentPattern.monsterName}
                 >
                   패턴 추가
@@ -280,16 +280,16 @@ export default function PatternBuilder({ monster_data }) {
                 <button
                   type="button"
                   onClick={handleRemoveLast}
-                  className="btn btn-secondary"
+                  className="btn btn-secondary btn-sm sm:btn-md"
                 >
-                  마지막 패턴 제거
+                  마지막 제거
                 </button>
                 <button
                   type="button"
                   onClick={handleExportJson}
-                  className="btn btn-accent"
+                  className="btn btn-accent btn-sm sm:btn-md"
                 >
-                  JSON 파일로 내보내기
+                  내보내기
                 </button>
                 <input
                   type="file"
@@ -301,24 +301,24 @@ export default function PatternBuilder({ monster_data }) {
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="btn btn-info"
+                  className="btn btn-info btn-sm sm:btn-md"
                 >
-                  JSON 파일 불러오기
+                  불러오기
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowDeleteModal(true)}
-                  className="btn btn-error"
+                  className="btn btn-error btn-sm sm:btn-md"
                 >
                   전체 삭제
                 </button>
               </div>
             </form>
 
-            <div className="divider">생성된 패턴</div>
+            <div className="divider my-2 sm:my-4">생성된 패턴</div>
 
-            <div className="overflow-x-auto">
-              <table className="table table-zebra">
+            <div className="overflow-x-auto -mx-2 sm:mx-0">
+              <table className="table table-zebra table-xs sm:table-sm lg:table-md">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -358,16 +358,17 @@ export default function PatternBuilder({ monster_data }) {
                 </tbody>
               </table>
             </div>
-            <div className="divider">코드 미리 보기</div>
+
+            <div className="divider my-2 sm:my-4">코드 미리 보기</div>
             <button
               type="button"
               onClick={() => setShowCode(!showCode)}
-              className="btn btn-outline mt-4"
+              className="btn btn-outline btn-sm sm:btn-md mt-2 sm:mt-4"
             >
               {showCode ? "코드 미리 보기 숨기기" : "코드 미리 보기"}
             </button>
             {showCode && (
-              <div className="mockup-code mt-4">
+              <div className="mockup-code mt-2 sm:mt-4 text-xs sm:text-sm">
                 <pre>
                   <code>{JSON.stringify(patterns, null, 2)}</code>
                 </pre>

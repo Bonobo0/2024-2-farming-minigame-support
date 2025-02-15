@@ -114,7 +114,9 @@ export default function SubWeaponBuilder() {
       <div className="w-full">
         <div className="card bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title mb-4">선택 무기 생성기</h2>
+            <h2 className="card-title mb-4 text-2xl font-bold">
+              선택 무기 생성기
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="form-control">
@@ -310,7 +312,7 @@ export default function SubWeaponBuilder() {
                   onClick={handleExportJson}
                   className="btn btn-accent"
                 >
-                  JSON 내보내기
+                  내보내기
                 </button>
                 <button
                   type="button"
@@ -372,6 +374,7 @@ export default function SubWeaponBuilder() {
               </table>
             </div>
 
+            <div className="divider my-2 sm:my-4">코드 미리 보기</div>
             <button
               type="button"
               onClick={() => setShowCode(!showCode)}

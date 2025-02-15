@@ -27,12 +27,14 @@ export default function ItemPageContent() {
         description="게임에 사용될 다양한 아이템 데이터를 생성할 수 있습니다."
       />
 
-      <div className="container mx-auto px-4">
-        <div className="tabs tabs-boxed mb-4">
+      <div className="container mx-auto px-2 sm:px-4">
+        <div className="tabs tabs-boxed mb-2 sm:mb-4 flex flex-wrap justify-center gap-1">
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`tab ${activeTab === tab.id ? "tab-active" : ""}`}
+              className={`tab tab-sm sm:tab-md ${
+                activeTab === tab.id ? "tab-active" : ""
+              }`}
               onClick={() => setActiveTab(tab.id)}
             >
               {tab.label}
@@ -40,7 +42,10 @@ export default function ItemPageContent() {
           ))}
         </div>
 
-        <div className="bg-base-100 rounded-box shadow-xl max-w-[75%] min-h-screen w-full flex justify-center items-center mx-auto">
+        <div
+          className="bg-base-100 rounded-box shadow-xl w-full min-h-screen mx-auto
+                      max-w-[95%] sm:max-w-[90%] lg:max-w-[85%] xl:max-w-[75%]"
+        >
           <ActiveComponent />
         </div>
       </div>
