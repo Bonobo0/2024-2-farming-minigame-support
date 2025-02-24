@@ -7,6 +7,7 @@ import {
   PatternIcon,
   MonsterIcon,
   ItemIcon,
+  StreamingAssetsEncryptIcon,
 } from "@/components/navigation/NavigationIcons";
 
 export default function Home() {
@@ -33,6 +34,13 @@ export default function Home() {
       title: "아이템",
       description: "게임 내 아이템 데이터를 관리합니다",
       isComingSoon: true,
+    },
+    {
+      href: "/encrypt/streamingassets",
+      icon: <StreamingAssetsEncryptIcon />,
+      title: "에셋 암호화",
+      description: "게임에 필요한 에셋을 암호화합니다",
+      isComingSoon: false,
     },
   ];
 
