@@ -8,6 +8,7 @@ import {
   MonsterIcon,
   ItemIcon,
   StreamingAssetsEncryptIcon,
+  StreamingAssetsDecryptIcon,
 } from "@/components/navigation/NavigationIcons";
 
 export default function Home() {
@@ -42,6 +43,13 @@ export default function Home() {
       description: "게임에 필요한 에셋을 암호화합니다",
       isComingSoon: false,
     },
+    {
+      href: "/decrypt/streamingassets",
+      icon: <StreamingAssetsDecryptIcon />,
+      title: "에셋 복호화",
+      description: "암호화된 에셋을 복호화하여 원본을 복구합니다",
+      isComingSoon: false,
+    },
   ];
 
   const handleClick = (path) => () => {
@@ -56,7 +64,7 @@ export default function Home() {
           <p className="text-lg text-slate-600">미니게임 데이터 제작 도구</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature) => (
             <FeatureCard key={feature.href} {...feature} />
           ))}
