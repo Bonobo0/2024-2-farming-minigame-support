@@ -21,15 +21,10 @@ export async function decryptFile(formData) {
   const iv = data.subarray(3, 3 + blockSize);
   const encryptedData = data.subarray(3 + blockSize);
 
-  // ================================
-  // 복호화 키를 여기에 설정하세요
-  // ================================
-  const DECRYPTION_KEY = "EnRBcwL791f3oEf/AH2D0D2EhbajQ0yBimSUbLHDTA8=";
-  
-  // 32바이트(256비트) 키 생성
+  // 32바이트(256비트) 키 생성 (암호화와 동일한 환경변수 사용)
   const keyHash = crypto
     .createHash("sha256")
-    .update(DECRYPTION_KEY)
+    .update(process.env.STREAMING_ASSETS_ENCRYPTION_KEY)
     .digest();
 
   // 복호화 수행
