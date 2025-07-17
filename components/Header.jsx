@@ -16,6 +16,7 @@ export default function Header() {
     { href: "/builder/pattern", label: "스폰 패턴" },
     { href: "/builder/monster", label: "몬스터" },
     { href: "/builder/item", label: "아이템" },
+    { href: "/encrypt/streamingassets", label: "에셋 암호화" },
   ];
 
   return (
